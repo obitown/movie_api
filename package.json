@@ -1,8 +1,8 @@
 {
   "name": "movie_api",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "description": "Web application that will provide users with access to information about different movies",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -12,7 +12,7 @@
     "url": "git+https://github.com/obitown/movie_api.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Anthony",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/obitown/movie_api/issues"
@@ -20,5 +20,6 @@
   "homepage": "https://github.com/obitown/movie_api#readme",
   "dependencies": {
     "lodash": "^4.17.21"
-  }
+  },
+  "devDependencies": {}
 }
