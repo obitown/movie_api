@@ -11,6 +11,7 @@ const app = express();
 // app.use(bodyParser.json());
 // app.use(methodOverride());
 
+//Movie list
 let movies = [
     {
         title:'The Room',
@@ -57,8 +58,6 @@ let movies = [
 //Logging wth Morgan
 app.use(morgan('common'));
 
-//serving Static files in '/public'
-app.use(express.static('public'));
 
 //GET
 app.get('/', (req, res) => {
@@ -68,6 +67,10 @@ app.get('/', (req, res) => {
 app.get('/movies', (req, res) => {
     res.json(movies);
 });
+
+//USE
+//serving Static files in '/public'
+app.use(express.static('public'));
 
 //error handaling
 app.use((err, req, res, next) => {
