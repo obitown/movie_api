@@ -16,101 +16,101 @@ let movies = [
     {
         title:'The Room',
         year: '2003',
-        genre: '',
+        genre: 'Drama',
         director: {
-            name: '',
-            birth: '',
-            death: ''
+            name: 'Tommy Wiseau',
+            birth: 'October 3, 1995',
+            death: 'Still alive'
         }
     },
     {
         title: 'Superbad',
         year: '2007',
-        genre: '',
+        genre: 'Comedy',
         director: {
-            name: '',
-            birth: '',
-            death: ''
+            name: 'Greg Mottola',
+            birth: 'July 11, 1964',
+            death: 'Still alive'
         }
     },
     {
         title: 'Shaun of the Dead',
         year: '2004',
-        genre: '',
+        genre: 'Comedy',
         director: {
-            name: '',
-            birth: '',
-            death: ''
+            name: 'Edgar Wright',
+            birth: 'April 18, 1974',
+            death: 'Still alive'
         }
     },
     {
         title: '28 Days Later...',
         year: '2002',
-        genre: '',
+        genre: 'Horror',
         director: {
-            name: '',
-            birth: '',
-            death: ''
+            name: 'Danny Boyle',
+            birth: 'October 20, 1956',
+            death: 'Still alive'
         }
     },
     {
         title: 'Die Hard',
         year: '1988',
-        genre: '',
+        genre: 'Action',
         director: {
-            name: '',
-            birth: '',
-            death: ''
+            name: 'John McTiernan',
+            birth: 'January 8, 1951',
+            death: 'Still alive'
         }
     },
     {
         title: 'Saving Private Ryan',
         year: '1998',
-        genre: '',
+        genre: 'Drama',
         director: {
-            name: '',
-            birth: '',
-            death: ''
+            name: 'Steven Spielberg',
+            birth: 'December 18, 1946',
+            death: 'Still alive'
         }
     },
     {
         title: 'Star Wars: Episode VI - Return of the Jedi',
         year: '1983',
-        genre: '',
+        genre: 'Action',
         director: {
-            name: '',
-            birth: '',
-            death: ''
+            name: 'Richard Marquand',
+            birth: 'September 22, 1937',
+            death: 'September 4, 1987'
         }
     },
     {
         title: 'Pacific Rim: Uprising',
         year: '2018',
-        genre: '',
+        genre: 'Action',
         director: {
-            name: '',
-            birth: '',
-            death: ''
+            name: 'Steven S. DeKnight',
+            birth: 'April 8, 1964',
+            death: 'Still alive'
         }
     },
     {
         title: 'Spider-Man',
         year: '2002',
-        genre: '',
+        genre: 'Action',
         director: {
-            name: '',
-            birth: '',
-            death: ''
+            name: 'Sam Raimi',
+            birth: 'October 23, 1959',
+            death: 'Still alive'
         }
     },
     {
         title: 'Midsommer',
         year: '2019',
-        genre: '',
+        genre: 'Drama',
         director: {
-            name: '',
-            birth: '',
-            death: ''
+            name: 'Ari Aster',
+            birth: 'July 15, 1986',
+            death: 'Still alive'
         }
     }
 ];
