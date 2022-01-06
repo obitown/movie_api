@@ -171,7 +171,7 @@ let movies = [
 app.use(morgan('common'));
 
 
-//GET
+//GET or READ
 app.get('/', (req, res) => {
     res.send('Welcome to my app!');
 });
