@@ -16,6 +16,21 @@ const express = require('express'),
 //Movie list
 let movies = [
     {
+        Title: '',
+        Description: '',
+        Genre: {
+            Name: '',
+            Description: ''
+        },
+        Director: {
+            Name: '',
+            Bio: '',
+            Birth: ''
+        },
+        ImageURL: '',
+        Featured: //True or False
+    },
+    {
         title:'The Room',
         year: '2003',
         genre: 'Drama',
@@ -127,13 +142,29 @@ app.get('/', (req, res) => {
 });
 
 app.get('/movies', (req, res) => {
-    res.json(movies);
+    res.status(200).json(movies);
 });
 
 app.get('/movies/:title', (req, res) => {
-    res.status(200).json(movies.find((movie) =>{
-        return movie.title === req.params.title
-    }));
+    const { title } = req.params;
+    const movie = movies.find(movie => movie.title == title);
+
+    if (movie) {
+        res.status(200).json(movie);
+    } else {
+        res.status(400).send('No such movie');
+    }
+});
+
+app.get('/movies/genre:genreName', (req, res) => {
+    const { genreName } = req.params;
+    const genre = movies.find(movie => movie. == title);
+
+    if (movie) {
+        res.status(200).json(movie);
+    } else {
+        res.status(400).send('No such movie');
+    }
 });
 
 //USE
