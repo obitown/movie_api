@@ -28,8 +28,9 @@ let movies = [
             Birth: ''
         },
         ImageURL: '',
-        Featured: //True or False
+        Featured: true
     },
+
     {
         title:'The Room',
         year: '2003',
@@ -148,17 +149,6 @@ app.get('/movies', (req, res) => {
 app.get('/movies/:title', (req, res) => {
     const { title } = req.params;
     const movie = movies.find(movie => movie.title == title);
-
-    if (movie) {
-        res.status(200).json(movie);
-    } else {
-        res.status(400).send('No such movie');
-    }
-});
-
-app.get('/movies/genre:genreName', (req, res) => {
-    const { genreName } = req.params;
-    const genre = movies.find(movie => movie. == title);
 
     if (movie) {
         res.status(200).json(movie);
