@@ -4,16 +4,26 @@ const express = require('express'),
     bodyParser = require('body-parser'),
     uuid = require('uuid');
 
-// const bodyParser = require('body-parser'),
-//     methodOverride = require('method-override');
+app.use(bodyParser.json());
 
-// app.use(bodyParser.urlencoded({
-//     extended: true
-// }));
-// app.use(bodyParser.json());
-// app.use(methodOverride());
+// user list
+let users = [
+    {
+        id: 1,
+        name: "Anthony",
+        favoriteMovies: []
+    },
+    {
+        id: 2,
+        name: "John",
+        favoriteMovies: [
+            "The Room"
+        ]
+    }
 
-//Movie list
+]
+
+// Movie list
 let movies = [
     {
         Title: "The Room",
@@ -27,7 +37,7 @@ let movies = [
             Bio: "Tommy Wiseau is an American actor, director, screenwriter & producer. He trained to be an actor at: American Conservatory Theater, Vince Chase Workshop, Jean Shelton Acting Lab, Laney College and Stella Adler Academy of Acting.",
             Birth: "1995"
         },
-        ImageURL: "https://s.movieinsider.com/images/p/600//486806_m1513803654.jpg",
+        ImageURL: "",
         Featured: false
     },
     {
@@ -167,11 +177,23 @@ let movies = [
     }
 ];
 
-//Logging wth Morgan
+// Logging wth Morgan
 app.use(morgan('common'));
 
+// CREATE
+app.post('/users', (req, res) => {
+    const newUser = req.body;
 
-//GET or READ
+    if (newUser.name) {
+        newUser.id = uuid.v4();
+        users.push(newUser);
+        res.status(201).json(newUser);
+    } else {
+        res.status(400).send('users need a name');
+    }
+});
+
+// READ
 app.get('/', (req, res) => {
     res.send('Welcome to my app!');
 });
@@ -182,7 +204,7 @@ app.get('/movies', (req, res) => {
 
 app.get('/movies/:title', (req, res) => {
     const { title } = req.params;
-    const movie = movies.find(movie => movie.title == title);
+    const movie = movies.find(movie => movie.Title === title);
 
     if (movie) {
         res.status(200).json(movie);
@@ -190,6 +212,85 @@ app.get('/movies/:title', (req, res) => {
         res.status(400).send('No such movie');
     }
 });
+
+app.get('/movies/genre/:genreName', (req, res) => {
+    const { genreName } = req.params;
+    const genre = movies.find(movie => movie.Genre.Name == genreName).Genre;
+
+    if (genre) {
+        res.status(200).json(genre);
+    } else {
+        res.status(400).send('No such genre');
+    }
+});
+
+app.get('/movies/directors/:directorName', (req, res) => {
+    const { directorName } = req.params;
+    const director = movies.find(movie => movie.Director.Name == directorName).Director;
+
+    if (director) {
+        res.status(200).json(director);
+    } else {
+        res.status(400).send('No such director');
+    }
+});
+
+// UPDATE
+app.put('/users/:id', (req, res) => {
+    const { id } = req.params;
+    const updatedUser = req.body;
+
+    let user = users.find(user => user.id == id);
+
+    if (user) {
+        user.name = updatedUser.name;
+        res.status(200).json(user)
+    } else {
+        res.status(400).send('No such user');
+    }
+});
+
+app.post('/users/:id/:movieTitle', (req, res) => {
+    const { id, movieTitle } = req.params;
+
+    let user = users.find(user => user.id == id);
+
+    if (user) {
+        user.favoriteMovies.push(movieTitle);
+        res.status(200).send('The movie has been added to your list');
+    } else {
+        res.status(400).send('No such user');
+    }
+});
+
+// DELETE
+app.delete('/users/:id/:movieTitle', (req, res) => {
+    const { id, movieTitle } = req.params;
+
+    let user = users.find(user => user.id == id);
+
+    if (user) {
+        user.favoriteMovies = user.favoriteMovies.filter( title => title !== movieTitle);
+        res.status(200).send('The movie has been removed from your list');
+    } else {
+        res.status(400).send('No such user');
+    }
+});
+
+app.delete('/users/:id', (req, res) => {
+    const { id } = req.params;
+
+    let user = users.find(user => user.id == id);
+
+    if (user) {
+        users = users.filter( user => user.id != id);
+        res.status(200).send('User has been deleted');
+    } else {
+        res.status(400).send('No such user');
+    }
+});
+
+
 
 //USE
 //serving Static files in '/public'

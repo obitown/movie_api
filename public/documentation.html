@@ -4,10 +4,90 @@
         <meta charset="utf-8">
         <title>Documentation</title>
     </head>
+    <style>
+        table, th, td {
+          border:1px solid black;
+        }
+    </style>
+
     <body>
         <h1>Objective</h1>
         <p>
-            To build the server-side comonents of a "movies" web application. The web application will provide useres with access to information about different movies, directors, and genres. Users will be able to sign up, update their personal info, and creat a list of their favorite movies.
+            To build the server-side comonents of a "movies" web application. The web application will provide useres with access to information about different movies, directors, and genres.<br/> Users will be able to sign up, update their personal info, and creat a list of their favorite movies.
         </p>
+
+        <table>
+            <tr>
+                <th>Request</th>
+                <th>URL</th>
+                <th>HTTP Method</th>
+                <th>Response</th>
+            </tr>
+
+            <tr>
+                <td>Get a list of movies</td>
+                <td>/movies</td>
+                <td>GET</td>
+                <td>Returns a list of movies</td>
+            </tr>
+            
+            <tr>
+                <td>Get information about a movie from the title</td>
+                <td>/movies/:title</td>
+                <td>GET</td>
+                <td>Returns information about specified movie</td>
+            </tr>
+
+            <tr>
+                <td>Get information about a director</td>
+                <td>/directors/:directorName</td>
+                <td>GET</td>
+                <td>Returns information about the specified director</td>
+            </tr>
+
+            <tr>
+                <td>Get a list of movies with specified genre</td>
+                <td>/movies/genre/:genreName</td>
+                <td>GET</td>
+                <td>Returns list of movies that share specified genre</td>
+            </tr>
+
+            <tr>
+                <td>Adds new user</td>
+                <td>/users</td>
+                <td>POST</td>
+                <td>adds new user to user list array</td>
+            </tr>
+
+            <tr>
+                <td>Add movie to users favorites</td>
+                <td>/user/:id/:movieTitle</td>
+                <td>POST</td>
+                <td>Adds specified movie to users favorite list</td>
+            </tr>
+
+            <tr>
+                <td>Updates user name</td>
+                <td>/users/:id</td>
+                <td>PUT</td>
+                <td>Updates user name and responds with a confirmation message</td>
+            </tr>
+
+            <tr>
+                <td>Deletes users information</td>
+                <td>/users/:id</td>
+                <td>DELETE</td>
+                <td>Deletes user info and responds with a confirmation message</td>
+            </tr>
+
+            <tr>
+                <td>Delete movie from user favorites</td>
+                <td>/users/:id/:movieTitle</td>
+                <td>DELETE</td>
+                <td>Deletes specified movie from favorite list and responds with confirmation message</td>
+            </tr>
+
+            
+
     </body>
 </html>
