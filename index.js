@@ -86,16 +86,16 @@ let movies = [
         Featured: true
     },
     {
-        Title: "Die Hard",
-        Description: "An NYPD officer tries to save his wife and several others taken hostage by German terrorists during a Christmas party at the Nakatomi Plaza in Los Angeles.",
+        Title: "The World's End",
+        Description: "Five friends who reunite in an attempt to top their epic pub crawl from twenty years earlier unwittingly become humanity's only hope for survival.",
         Genre: {
-            Name: "Action",
-            Description: "Action films are a film genre where action sequences, such as fighting, stunts, car chases or explosions, take precedence over elements like characterization or complex plotting. The action typically involves individual efforts on the part of the hero, in contrast with most war films. The genre is closely linked with the thriller and adventure film genres."
+            Name: "Comedy",
+            Description: "A comedy film is a category of film which emphasizes humor."
         },
         Director: {
-            Name: "John McTiernan",
-            Bio: "John McTiernan was born on January 8, 1951 in Albany, New York, USA as John Campbell McTiernan Jr. He is a director and producer, known for Die Hard (1988), Rollerball (2002) and Last Action Hero (1993). He has been married to Gail Sistrunk since 2012. He was previously married to Kate Harrington, Donna Dubrow and Carol Land.",
-            Birth: "1951"
+            Name: "Edgar Wright",
+            Bio: "Edgar Howard Wright (born 18 April 1974) is an English director, screenwriter, producer, and actor. He is best known for his comedic Three Flavours Cornetto film trilogy consisting of Shaun of the Dead (2004), Hot Fuzz (2007), and The World's End (2013), made with recurrent collaborators Simon Pegg, Nira Park and Nick Frost. He also collaborated with them as the director of the television series Spaced.",
+            Birth: "1974"
         },
         ImageURL: "",
         Featured: true
