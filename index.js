@@ -37,7 +37,7 @@ let movies = [
             Bio: "Tommy Wiseau is an American actor, director, screenwriter & producer. He trained to be an actor at: American Conservatory Theater, Vince Chase Workshop, Jean Shelton Acting Lab, Laney College and Stella Adler Academy of Acting.",
             Birth: "1995"
         },
-        ImageURL: "",
+        ImageURL: "https://m.media-amazon.com/images/M/MV5BYjEzN2FlYmYtNDkwMC00NGFkLWE5ODctYmE5NmYxNzE2MmRiXkEyXkFqcGdeQXVyMjMwODc5Mw@@._V1_.jpg",
         Featured: false
     },
     {
@@ -52,7 +52,7 @@ let movies = [
             Bio: "Greg Mottola was born on July 11, 1964 in Dix Hills, Long Island, New York, USA as Gregory James Mottola. He is a director and producer, known for Adventureland (2009), The Daytrippers (1996) and Superbad (2007). He is married to Sarah Allentuch. They have three children.",
             Birth: "1964"
         },
-        ImageURL: "",
+        ImageURL: "https://m.media-amazon.com/images/M/MV5BMTc0NjIyMjA2OF5BMl5BanBnXkFtZTcwMzIxNDE1MQ@@._V1_.jpg",
         Featured: true
     },
     {
@@ -67,7 +67,7 @@ let movies = [
             Bio: "Edgar Howard Wright (born 18 April 1974) is an English director, screenwriter, producer, and actor. He is best known for his comedic Three Flavours Cornetto film trilogy consisting of Shaun of the Dead (2004), Hot Fuzz (2007), and The World's End (2013), made with recurrent collaborators Simon Pegg, Nira Park and Nick Frost. He also collaborated with them as the director of the television series Spaced.",
             Birth: "1974"
         },
-        ImageURL: "",
+        ImageURL: "https://m.media-amazon.com/images/M/MV5BMTg5Mjk2NDMtZTk0Ny00YTQ0LWIzYWEtMWI5MGQ0Mjg1OTNkXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
         Featured: true
     },
     {
@@ -97,7 +97,7 @@ let movies = [
             Bio: "Edgar Howard Wright (born 18 April 1974) is an English director, screenwriter, producer, and actor. He is best known for his comedic Three Flavours Cornetto film trilogy consisting of Shaun of the Dead (2004), Hot Fuzz (2007), and The World's End (2013), made with recurrent collaborators Simon Pegg, Nira Park and Nick Frost. He also collaborated with them as the director of the television series Spaced.",
             Birth: "1974"
         },
-        ImageURL: "",
+        ImageURL: "https://m.media-amazon.com/images/M/MV5BNzA1MTk1MzY0OV5BMl5BanBnXkFtZTgwNjkzNTUwMDE@._V1_.jpg",
         Featured: true
     },
     {
@@ -112,7 +112,7 @@ let movies = [
             Bio: "One of the most influential personalities in the history of cinema, Steven Spielberg is Hollywood's best known director and one of the wealthiest filmmakers in the world. He has an extraordinary number of commercially successful and critically acclaimed credits to his name, either as a director, producer or writer since launching the summer blockbuster with Jaws (1975), and he has done more to define popular film-making since the mid-1970s than anyone else.",
             Birth: "1946"
         },
-        ImageURL: "",
+        ImageURL: "https://m.media-amazon.com/images/M/MV5BZjhkMDM4MWItZTVjOC00ZDRhLThmYTAtM2I5NzBmNmNlMzI1XkEyXkFqcGdeQXVyNDYyMDk5MTU@._V1_.jpg",
         Featured: true
     },
     {
@@ -127,7 +127,7 @@ let movies = [
             Bio: "Richard Marquand was born on September 22, 1937 in Llanishen, Cardiff, Glamorgan, Wales as Richard Alfred Marquand. He was a director and producer, known for Star Wars: Episode VI - Return of the Jedi (1983), Jagged Edge (1985) and Nowhere to Run (1993). He was married to Carol Bell and Josephine Marquand. He died on September 4, 1987 in Tunbridge Wells, Kent, England.",
             Birth: "1987"
         },
-        ImageURL: "",
+        ImageURL: "https://m.media-amazon.com/images/M/MV5BYmU1NDRjNDgtMzhiMi00NjZmLTg5NGItZDNiZjU5NTU4OTE0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
         Featured: true
     },
     {
@@ -142,7 +142,7 @@ let movies = [
             Bio: "Steven S. DeKnight was born in Millville, New Jersey, USA. He is a producer and writer, known for Pacific Rim: Uprising (2018), Spartacus (2010) and Daredevil (2015). He is married to Jaime Slater.",
             Birth: "1964"
         },
-        ImageURL: "",
+        ImageURL: "https://m.media-amazon.com/images/M/MV5BMjI3Nzg0MTM5NF5BMl5BanBnXkFtZTgwOTE2MTgwNTM@._V1_.jpg",
         Featured: true
     },
     {
@@ -157,7 +157,7 @@ let movies = [
             Bio: "Highly inventive U.S. film director/producer/writer/actor Sam Raimi first came to the attention of film fans with the savage, yet darkly humorous, low-budget horror film, The Evil Dead (1981). From his childhood, Raimi was a fan of the cinema and, before he was ten-years-old, he was out making movies with an 8mm camera. He was a devoted fan of The Three Stooges, so much of Raimi's film work in his teens, with good friends Bruce Campbell and Rob Tapert, was slapstick comedy based around what they had observed from 'Stooges' movies.",
             Birth: "1956"
         },
-        ImageURL: "",
+        ImageURL: "https://m.media-amazon.com/images/M/MV5BZDEyN2NhMjgtMjdhNi00MmNlLWE5YTgtZGE4MzNjMTRlMGEwXkEyXkFqcGdeQXVyNDUyOTg3Njg@._V1_.jpg",
         Featured: true
     },
     {
@@ -172,7 +172,7 @@ let movies = [
             Bio: "Ari Aster was born on July 15, 1986 in New York City, New York, USA. He is a director and writer, known for Hereditary (2018), Midsommar (2019) and Disappointment Blvd. (2022).",
             Birth: "1986"
         },
-        ImageURL: "",
+        ImageURL: "https://m.media-amazon.com/images/M/MV5BMzQxNzQzOTQwM15BMl5BanBnXkFtZTgwMDQ2NTcwODM@._V1_.jpg",
         Featured: true
     }
 ];
