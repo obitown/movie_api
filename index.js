@@ -221,7 +221,7 @@ app.get('/', (req, res) => {
     res.send('Welcome to myFlix!!');
 });
 
-//return movie list at /movies
+//GET- get list of all movies
 app.get('/movies', (req, res) => {
     Movies.find()
         .then((movies) => {

@@ -1,93 +1,123 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>Documentation</title>
-    </head>
-    <style>
-        table, th, td {
-          border:1px solid black;
-        }
-    </style>
 
-    <body>
-        <h1>Objective</h1>
-        <p>
-            To build the server-side comonents of a "movies" web application. The web application will provide useres with access to information about different movies, directors, and genres.<br/> Users will be able to sign up, update their personal info, and creat a list of their favorite movies.
-        </p>
+<head>
+    <meta charset="utf-8">
+    <title>Documentation</title>
+</head>
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        background-color: #212121;
+        color: #61a7cf;
+    }
 
-        <table>
+    img {
+        max-width: 750px;
+        min-width: 270px;
+        border: 1px solid white;
+    }
+</style>
+
+<body>
+    <h1>Objective</h1>
+    <p>
+        To build the server-side comonents of a "movies" web application. The web application will provide useres with
+        access to information about different movies, directors, and genres.<br /> Users will be able to sign up, update
+        their personal info, and creat a list of their favorite movies.
+    </p>
+    <table>
+        <thead>
             <tr>
                 <th>Request</th>
                 <th>URL</th>
                 <th>HTTP Method</th>
                 <th>Response</th>
+                <th>Examples</th>
             </tr>
-
+        </thead>
+        <tbody>
             <tr>
-                <td>Get a list of movies</td>
+                <td>Create a new user.<br></td>
+                <td>/users/</td>
+                <td>POST<br></td>
+                <td>Returns new user info in JSON.<br></td>
+                <td><img src="https://i.imgur.com/TADZ8KO.png"><img src="https://i.imgur.com/XtDaCuk.png"></td>
+            </tr>
+            <tr>
+                <td>Create movie on users favorite list.<br></td>
+                <td>/user/:Username/mvoies/:movieID</td>
+                <td>POST<br></td>
+                <td>Returns updated user info.<br></td>
+                <td><img src="https://i.imgur.com/jS7YUDk.png"></td>
+            </tr>
+            <tr>
+                <td>Get a list of all movies.<br></td>
                 <td>/movies</td>
+                <td>GET<br></td>
+                <td>Returns a JSON list of movies and their info.<br></td>
+                <td><img src="https://i.imgur.com/HvW5GJe.png"></td>
+            </tr>
+            <tr>
+                <td>Get a list of all users.</td>
+                <td>/users<br></td>
+                <td>GET<br></td>
+                <td>Returns a JSON list of users.<br></td>
+                <td><img src="https://i.imgur.com/3wXitad.png"></td>
+            </tr>
+            <tr>
+                <td>Get a user by username<br></td>
+                <td>/users/:Username<br></td>
+                <td>GET<br></td>
+                <td>Returns specific user by username<br></td>
+                <td><img src="https://i.imgur.com/a8Rb9BR.png"></td>
+            </tr>
+            <tr>
+                <td>Get a movie by Title<br></td>
+                <td>/movies/:title<br></td>
+                <td>GET<br></td>
+                <td>Returns specific movie by Title.<br></td>
+                <td><img src="https://i.imgur.com/T7E8uno.png"></td>
+            </tr>
+            <tr>
+                <td>Get genre by name<br></td>
+                <td>/movies/genre/:genreName<br></td>
                 <td>GET</td>
-                <td>Returns a list of movies</td>
+                <td>Returns description of specific genre</td>
+                <td><img src="https://i.imgur.com/pSjU6C5.png"></td>
             </tr>
-            
             <tr>
-                <td>Get information about a movie from the title</td>
-                <td>/movies/:title</td>
-                <td>GET</td>
-                <td>Returns information about specified movie</td>
+                <td>Get director by name</td>
+                <td>movies/directors/:directorName</td>
+                <td>GET<br></td>
+                <td>Returns specific director and info</td>
+                <td><img src="https://i.imgur.com/6s095WE.png"></td>
             </tr>
-
             <tr>
-                <td>Get information about a director</td>
-                <td>/directors/:directorName</td>
-                <td>GET</td>
-                <td>Returns information about the specified director</td>
+                <td>Update users info by username</td>
+                <td>user/:Username</td>
+                <td>PUT<br></td>
+                <td>Returns updated information of specified user</td>
+                <td><img src="https://i.imgur.com/JRMr3ma.png"><img src="https://i.imgur.com/LDah944.png"></td>
             </tr>
-
             <tr>
-                <td>Get a list of movies with specified genre</td>
-                <td>/movies/genre/:genreName</td>
-                <td>GET</td>
-                <td>Returns list of movies that share specified genre</td>
-            </tr>
-
-            <tr>
-                <td>Adds new user</td>
-                <td>/users</td>
-                <td>POST</td>
-                <td>adds new user to user list array</td>
-            </tr>
-
-            <tr>
-                <td>Add movie to users favorites</td>
-                <td>/user/:id/:movieTitle</td>
-                <td>POST</td>
-                <td>Adds specified movie to users favorite list</td>
-            </tr>
-
-            <tr>
-                <td>Updates user name</td>
-                <td>/users/:id</td>
-                <td>PUT</td>
-                <td>Updates user name and responds with a confirmation message</td>
-            </tr>
-
-            <tr>
-                <td>Deletes users information</td>
-                <td>/users/:id</td>
+                <td>Delete movie from Favorite movie list</td>
+                <td>user/:Username/movies/:movieID<br></td>
                 <td>DELETE</td>
-                <td>Deletes user info and responds with a confirmation message</td>
+                <td>Returns updated Favorite movie list<br></td>
+                <td><img src="https://i.imgur.com/vHI1plh.png"></td>
             </tr>
-
             <tr>
-                <td>Delete movie from user favorites</td>
-                <td>/users/:id/:movieTitle</td>
+                <td>Delete user by Username</td>
+                <td>user/:Username<br></td>
                 <td>DELETE</td>
-                <td>Deletes specified movie from favorite list and responds with confirmation message</td>
+                <td>Removes user from user list</td>
+                <td><img src="https://i.imgur.com/hjG0jl4.png"></td>
             </tr>
+        </tbody>
+    </table>
+</body>
 
-            
-
-    </body>
 </html>
