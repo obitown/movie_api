@@ -17,7 +17,7 @@ mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnified
 app.use(bodyParser.json());
 
 const cors = require('cors');
-let allowedOrgins = ['http://localhost:8080', 'http://testsite.com'];
+let allowedOrgins = ['http://localhost:8080', 'https://stormy-falls-74188.herokuapp.com/'];
 
 app.use (cors({
     orgin: (orgin, callback) => {
