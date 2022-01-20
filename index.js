@@ -17,7 +17,19 @@ mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnified
 app.use(bodyParser.json());
 
 const cors = require('cors');
-app.use(cors());
+let allowedOrgins = ['http://localhost:8080', 'http://testsite.com'];
+
+app.use (cors({
+    orgin: (orgin, callback) => {
+        if(!orgin) return callback(null, true);
+        if(allowedOrgins.indexOf(orgin) === -1){
+            //if a specific orgin isn't found on the list of allowed origins
+            let message = 'The CORS policy for this application doesnt allow acces from origin ' + origin;
+            return callback(new Error(message ), false);
+        }
+        return callback(null, true);
+    }
+}));
 
 let auth = require('./auth')(app);
 
