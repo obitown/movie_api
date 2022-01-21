@@ -46,30 +46,27 @@ app.use(morgan('common'));
 // POST- Create new users-/users
 app.post('/users', [
     check('Username', 'Username is required').isLength({ min: 5 }),
-    check('Username', 'Username contains non alphanumeric characters - not allwed.').isAlphanumeric(),
+    check('Username', 'Username contains non alphanumeric characters - not allowed.').isAlphanumeric(),
     check('Password', 'Password is required').not().isEmpty(),
     check('Email', 'Email does not appear to be valid').isEmail()
 ], (req, res) => {
-    //Check the validation object for errors
     let errors = validationResult(req);
-
     if (!errors.isEmpty()) {
         return res.status(422).json({ errors: errors.array() });
     }
-
+    //Variable to store hashed password
     let hashedPassword = Users.hashPassword(req.body.Password);
-    Users.findOne({ Username: req.body.Username }) //Search to see if a user with the requested username already exists
+    Users.findOne({ Username: req.body.Username })
         .then((user) => {
-            if (user) { //if the user is found, send a response that it already exists
-                return res.status(400).send(req.body.Username + 'already exists');
+            if (user) {
+                return res.status(400).send(req.body.Username + ' Already exists');
             } else {
-                Users
-                    .create({
-                        Username: req.body.Username,
-                        Password: hashedPassword,
-                        Email: req.body.Email,
-                        Birthday: req.body.Birthday
-                    })
+                Users.create({
+                    Username: req.body.Username,
+                    Password: hashedPassword,
+                    Email: req.body.Email,
+                    Birthday: req.body.Birthday
+                })
                     .then((user) => { res.status(201).json(user) })
                     .catch((error) => {
                         console.error(error);
