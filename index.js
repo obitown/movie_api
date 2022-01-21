@@ -19,13 +19,13 @@ app.use(bodyParser.json());
 const cors = require('cors');
 let allowedOrgins = ['http://localhost:8080', 'https://stormy-falls-74188.herokuapp.com/'];
 
-app.use (cors({
+app.use(cors({
     orgin: (orgin, callback) => {
-        if(!orgin) return callback(null, true);
-        if(allowedOrgins.indexOf(orgin) === -1){
+        if (!orgin) return callback(null, true);
+        if (allowedOrgins.indexOf(orgin) === -1) {
             //if a specific orgin isn't found on the list of allowed origins
             let message = 'The CORS policy for this application doesnt allow acces from origin ' + origin;
-            return callback(new Error(message ), false);
+            return callback(new Error(message), false);
         }
         return callback(null, true);
     }
@@ -252,6 +252,6 @@ app.use((err, req, res, next) => {
 
 //Listen for requests
 const port = process.env.PORT;
-app.listen(port, '0.0.0.0',() => {
+app.listen(port, '0.0.0.0', () => {
     console.log('Listening on Port ' + port);
 });
