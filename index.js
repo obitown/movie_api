@@ -12,14 +12,14 @@ const { check, validationResult } = require('express-validator');
 const Movies = Models.Movie;
 const Users = Models.User;
 
-// mongoose.connect('mongodb+srv://obitwon:1234@obiflixdb.ilpfy.mongodb.net/obiFlixDB?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb+srv://obitwon:1234@obiflixdb.ilpfy.mongodb.net/obiFlixDB?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
 
 mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.use(bodyParser.json());
 
 const cors = require('cors');
-let allowedOrgins = ['http://localhost:8080', 'https://stormy-falls-74188.herokuapp.com/','http://localhost:1234' ];
+let allowedOrgins = ['http://localhost:8080', 'https://stormy-falls-74188.herokuapp.com/', 'http://localhost:1234'];
 
 app.use(cors({
     orgin: (orgin, callback) => {
@@ -88,7 +88,7 @@ app.get('/', (req, res) => {
 });
 
 //GET- get list of all movies
-app.get('/movies', /*passport.authenticate('jwt', { session: false }),*/ (req, res) => {
+app.get('/movies', /*passport.authenticate('jwt', { session: false }),*/(req, res) => {
     Movies.find()
         .then((movies) => {
             res.status(201).json(movies);
