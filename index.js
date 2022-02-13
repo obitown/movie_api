@@ -95,7 +95,7 @@ app.get('/movies', /**passport.authenticate('jwt', { session: false }),*/(req, r
         })
         .catch((err) => {
             console.error(err);
-            res.status(500).send("Error: " + err);
+            res.status(500).send("Error: " + error);
         });
 });
 
