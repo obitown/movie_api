@@ -7,7 +7,7 @@ const Models = require('./models.js');
 const res = require('express/lib/response');
 const req = require('express/lib/request');
 const { check, validationResult } = require('express-validator');
-
+const cors = require('cors');
 
 const Movies = Models.Movie;
 const Users = Models.User;
@@ -18,8 +18,8 @@ mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnified
 
 app.use(bodyParser.json());
 
-const cors = require('cors');
-let allowedOrgins = ['http://localhost:8080', 'https://obi-flix.herokuapp.com/', 'http://localhost:1234'];
+
+let allowedOrgins = ['http://localhost:8080', 'http://localhost:1234'];
 
 app.use(cors({
     orgin: (orgin, callback) => {
