@@ -19,7 +19,7 @@ mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnified
 app.use(bodyParser.json());
 
 
-let allowedOrgins = ['http://localhost:8080', 'http://localhost:1234', 'https://obi-flix.herokuapp.com/'];
+let allowedOrgins = ['http://localhost:8080', 'http://localhost:1234', 'https://obi-flix.herokuapp.com/', 'https://git.heroku.com/obi-flix.git'];
 
 app.use(cors({
     orgin: (orgin, callback) => {
