@@ -240,7 +240,9 @@ app.delete('/users/:Username', passport.authenticate('jwt', { session: false }),
 
 //USE
 //serving Static files in '/public'
-app.use(express.static('public'));
+app.use(express.static('public', {
+    extensions: ['html']
+}));
 
 
 //error handaling
