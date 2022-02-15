@@ -100,7 +100,7 @@ app.get('/movies', /**passport.authenticate('jwt', { session: false }),*/(req, r
 });
 
 //GET- Get a list of all users as JSON object - /users
-app.get('/users', passport.authenticate('jwt', { session: false }), (req, res) => {
+app.get('/users', /**passport.authenticate('jwt', { session: false }),*/(req, res) => {
     Users.find().then((users) => {
         res.status(201).json(users);
     }).catch((err) => {
