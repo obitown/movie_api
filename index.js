@@ -100,7 +100,7 @@ app.get('/movies', /**passport.authenticate('jwt', { session: false }),*/(req, r
 });
 
 //GET- Get a list of all users as JSON object - /users
-app.get('/users', /**passport.authenticate('jwt', { session: false }),*/(req, res) => {
+app.get('/users', passport.authenticate('jwt', { session: false }), (req, res) => {
     Users.find().then((users) => {
         res.status(201).json(users);
     }).catch((err) => {
@@ -240,7 +240,9 @@ app.delete('/users/:Username', passport.authenticate('jwt', { session: false }),
 
 //USE
 //serving Static files in '/public'
-app.use(express.static('public'));
+app.use(express.static('public', {
+    extensions: ['html']
+}));
 
 
 //error handaling
@@ -250,7 +252,7 @@ app.use((err, req, res, next) => {
 });
 
 //Listen for requests
-const port = process.env.PORT;
+const port = process.env.PORT || 8080;
 app.listen(port, '0.0.0.0', () => {
     console.log('Listening on Port ' + port);
 });
