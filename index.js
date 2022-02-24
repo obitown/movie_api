@@ -19,7 +19,7 @@ mongoose.connect('mongodb+srv://obitwon:1234@obiflixdb.ilpfy.mongodb.net/obiFlix
 app.use(bodyParser.json());
 
 
-let allowedOrigins = ['http://localhost:8080', 'http://localhost:1234', 'https://obi-flix.herokuapp.com/', 'https://obiflix.netlify.app/'];
+let allowedOrigins = ['http://localhost:8080', 'http://localhost:1234', 'https://obi-flix.herokuapp.com/', 'https://obiflix.netlify.app/', 'https://6216cfb40aa4f30008e08d23--obiflix.netlify.app/'];
 
 app.use(cors({
     origin: (origin, callback) => {
