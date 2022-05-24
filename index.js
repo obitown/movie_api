@@ -167,38 +167,43 @@ app.get('/movies/directors/:directorName', passport.authenticate('jwt', { sessio
 });
 
 //UPDATE- Update a users info, by username - /user/:Username
-app.put('/users/:Username', [
-    check('Username', 'Username is required').isLength({ min: 5 }),
-    check('Username', 'Username contains non alphanumeric characters - not allwed.').isAlphanumeric(),
-    check('Password', 'Password is required').not().isEmpty(),
-    check('Email', 'Email does not appear to be valid').isEmail()
-], passport.authenticate('jwt', { session: false }), (req, res) => {
-    //Check the validation object for errors
-    let errors = validationResult(req);
+app.put('/users/:Username', passport.authenticate('jwt', { session: false }),
+    // Validation logic
+    [
+        check('Username', 'Username is required (min 3 characters).').isLength({ min: 3 }),
+        check('Username', 'Username contains non alphanumeric characters - not allowed.').isAlphanumeric()
+    ], (req, res) => {
+        // Check validation object for errors
+        let errors = validationResult(req);
+        let hashedPassword = undefined;
 
-    if (!errors.isEmpty()) {
-        return res.status(422).json({ errors: errors.array() });
-    }
-
-    Users.findOneAndUpdate({ Username: req.params.Username }, {
-        $set:
-        {
-            Username: req.body.Username,
-            Password: req.body.Password,
-            Email: req.body.Email,
-            Birthday: req.body.Birthday
+        if (!errors.isEmpty()) {
+            return res.status(422).json({ errors: errors.array() });
         }
-    },
-        { new: true },
-        (err, updatedUser) => {
-            if (err) {
+
+        // If Password is given in request body, create hashedPassword from given Password
+        if (req.body.hasOwnProperty('Password')) {
+            hashedPassword = Users.hashPassword(req.body.Password);
+        }
+
+        Users.findOneAndUpdate({ Username: req.params.Username }, // Find user by existing username
+            {
+                $set: { // Info from request body that can be updated
+                    Username: req.body.Username,
+                    Password: hashedPassword, // Store only hashed password
+                    Email: req.body.Email,
+                    Birthday: req.body.Birthday
+                }
+            },
+            { new: true }) // Return the updated document
+            .then((updatedUser) => {
+                res.json(updatedUser); // Return json object of updatedUser
+            })
+            .catch((err) => {
                 console.error(err);
                 res.status(500).send('Error: ' + err);
-            } else {
-                res.json(updatedUser);
-            }
-        });
-});
+            });
+    });
 
 // POST- Add a movie to users list of favorites by username
 app.post('/users/:Username/movies/:MovieID', passport.authenticate('jwt', { session: false }), (req, res) => {
