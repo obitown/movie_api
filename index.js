@@ -19,7 +19,14 @@ mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnified
 app.use(bodyParser.json());
 
 
-let allowedOrigins = ['http://localhost:8080', 'http://localhost:1234', 'https://obi-flix.herokuapp.com/', 'https://obiflix.netlify.app', 'http://localhost:4200'];
+let allowedOrigins = [
+    'http://localhost:8080',
+    'http://localhost:1234',
+    'https://obiflix.netlify.app',
+    'http://localhost:4200',
+    'https://obi-flix.herokuapp.com/',
+    'https://obi-flix.herokuapp.com/Login',
+];
 
 app.use(cors({
     origin: (origin, callback) => {
