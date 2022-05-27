@@ -25,7 +25,7 @@ let allowedOrigins = [
     'https://obiflix.netlify.app',
     'http://localhost:4200',
     'https://obi-flix.herokuapp.com/',
-    'https://obi-flix.herokuapp.com/Login',
+    'https://obitown.github.io',
 ];
 
 app.use(cors({
